@@ -3,7 +3,7 @@ import express, { NextFunction } from 'express';
 import cors from 'cors';
 import routes from './routes/index';
 import AppError from '../errors/AppError';
-
+import '../typeorm/index';
 const app = express();
 
 app.use(cors());
