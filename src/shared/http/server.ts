@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes/index';
+import 'express-async-errors';
 import AppError from '../errors/AppError';
 import '@shared/typeorm/index';
 const app = express();

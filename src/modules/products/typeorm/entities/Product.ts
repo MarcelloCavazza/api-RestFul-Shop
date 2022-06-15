@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('products')
+@Entity('Products')
 class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -17,9 +17,9 @@ class Product {
   @Column('decimal')
   quantity: number;
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }
 
 export default Product;
