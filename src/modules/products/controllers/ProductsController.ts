@@ -19,7 +19,9 @@ export default class ProductsController {
 
     const showProduct = new ShowProductService();
 
-    const product = await showProduct.execute({ id });
+    const product = await showProduct.execute({ id }).catch(e => {
+      response.send(e);
+    });
 
     return response.json(product);
   }
@@ -29,7 +31,11 @@ export default class ProductsController {
 
     const createProduct = new CreateProductService();
 
-    const product = await createProduct.execute({ name, price, quantity });
+    const product = await createProduct
+      .execute({ name, price, quantity })
+      .catch(e => {
+        response.send(e);
+      });
 
     return response.json(product);
   }
@@ -40,7 +46,11 @@ export default class ProductsController {
 
     const updateProduct = new UpdateProductService();
 
-    const product = await updateProduct.execute({ id, name, price, quantity });
+    const product = await updateProduct
+      .execute({ id, name, price, quantity })
+      .catch(e => {
+        response.send(e);
+      });
 
     return response.json(product);
   }
@@ -49,7 +59,9 @@ export default class ProductsController {
 
     const deleteProduct = new DeleteProductService();
 
-    await deleteProduct.execute({ id });
+    await deleteProduct.execute({ id }).catch(e => {
+      response.send(e);
+    });
 
     return response.json([]);
   }
