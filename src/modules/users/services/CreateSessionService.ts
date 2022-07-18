@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import { compare, hash } from 'bcryptjs';
+import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { getCustomRepository } from 'typeorm';
 import User from '../typeorm/entities/Users';
